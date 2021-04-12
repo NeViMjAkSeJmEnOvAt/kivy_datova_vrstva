@@ -1,4 +1,4 @@
-from sqlalchemy import MetaData, Table, Integer, String, Column, create_engine
+from sqlalchemy import Integer, String, Column, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
@@ -137,7 +137,7 @@ class Start:
 
     def create_gun(self, gun):
         try:
-            self.session.add(guns)
+            self.session.add(gun)
             self.session.commit()
             return True
         except:
@@ -161,3 +161,7 @@ class Start:
 
 
 db = Start(dbtype='sqlite', dbname='persons.db')
+
+db.create_solider(solider)
+
+
