@@ -49,4 +49,115 @@ class Start:
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
-db = Start()
+    def read_all_solider(self, order = solider.name):
+        try:
+            result = self.session.query(solider).all()
+            return result
+        except:
+            return False
+
+    def read_all_platoon(self, order = platoons.name):
+        try:
+            result = self.session.query(platoons).all()
+            return result
+        except:
+            return False
+
+    def read_all_guns(self, order = gun.name):
+        try:
+            result = self.session.query(gun).all()
+            return result
+        except:
+            return False
+
+    def read_by_solider_age(self, age):
+        try:
+            result = self.session.query(solider).get(age)
+            return result
+        except:
+            return False
+
+    def read_by_solider_name(self, name):
+        try:
+            result = self.session.query(solider).get(name)
+            return result
+        except:
+            return False
+
+    def read_by_solider_rank(self, rank):
+        try:
+            result = self.session.query(solider).get(rank)
+            return result
+        except:
+            return False
+
+    def read_solider_gun(self, age):
+        try:
+            result = self.session.query(solider).get(gun)
+            return result
+        except:
+            return False
+
+    def read_by_platoon_size(self, size):
+        try:
+            result = self.session.query(platoons).get(size)
+            return result
+        except:
+            return False
+
+    def read_by_gun_ammo(self, ammo):
+        try:
+            result = self.session.query(gun).get(ammo)
+            return result
+        except:
+            return False
+
+    def read_by_gun_ammo_type(self, ammo_type):
+        try:
+            result = self.session.query(gun).get(ammo_type)
+            return result
+        except:
+            return False
+
+    def create_solider(self, solider):
+        try:
+            self.session.add(solider)
+            self.session.commit()
+            return True
+        except:
+            return False
+
+    def create_platoon(self, platoon):
+        try:
+            self.session.add(platoon)
+            self.session.commit()
+            return True
+        except:
+            return False
+
+    def create_gun(self, gun):
+        try:
+            self.session.add(guns)
+            self.session.commit()
+            return True
+        except:
+            return False
+
+    def update(self):
+        try:
+            self.session.commit()
+            return True
+        except:
+            return False
+
+    def delete(self, name):
+        try:
+            solider = self.read_by_solider_name(name)
+            self.session.delete(solider)
+            self.session.commit()
+            return True
+        except:
+            return False
+
+
+db = Start(dbtype='sqlite', dbname='persons.db')

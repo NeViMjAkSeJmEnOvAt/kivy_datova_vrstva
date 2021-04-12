@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="persons" uuid="93ddfe6a-facf-4161-a3d5-5a9ca59e0bb5">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\Python\kivy_datova_vrstva\persons</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="persons [2]" uuid="0bb76532-0995-4ffe-b598-2a2ac0d97de0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\Python\kivy_datova_vrstva\persons.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
